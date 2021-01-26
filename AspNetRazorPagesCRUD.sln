@@ -7,7 +7,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PeopleDB", "PeopleDB\People
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{D1DD2EEF-5BFF-4E19-B5CC-A83F5C75D0A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleWeb", "PeopleWeb\PeopleWeb.csproj", "{B22FBEE0-1921-486C-BDEB-AD43F61312B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleWeb", "PeopleWeb\PeopleWeb.csproj", "{B22FBEE0-1921-486C-BDEB-AD43F61312B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleWebMVC", "PeopleWebMVC\PeopleWebMVC.csproj", "{FBDD1600-E451-4AE1-B596-CBD456622484}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{B22FBEE0-1921-486C-BDEB-AD43F61312B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B22FBEE0-1921-486C-BDEB-AD43F61312B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B22FBEE0-1921-486C-BDEB-AD43F61312B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBDD1600-E451-4AE1-B596-CBD456622484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDD1600-E451-4AE1-B596-CBD456622484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDD1600-E451-4AE1-B596-CBD456622484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDD1600-E451-4AE1-B596-CBD456622484}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
