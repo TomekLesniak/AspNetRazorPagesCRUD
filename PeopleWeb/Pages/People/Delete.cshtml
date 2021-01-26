@@ -1,0 +1,20 @@
+﻿@page
+@model PeopleWeb.Pages.People.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@if (Model.Person is null)
+{
+    <h1>Person does not exists in the database</h1>
+}
+else
+{
+    <h2>Are you sure want to delete @Model.Person.FirstName @Model.Person.LastName?</h2>
+    <form method="post">
+        <input asp-for="Person.Id" value="@Model.Id" type="hidden"/>
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger"/>
+        </div>
+    </form>
+}

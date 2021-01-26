@@ -1,0 +1,26 @@
+﻿@page
+@model PeopleWeb.Pages.People.UpdateModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+@if (Model.FullPerson is null)
+{
+    <h1>Person does not exists in database</h1>
+}
+else
+{
+    <h2>Updating @Model.FullPerson.FirstName @Model.FullPerson.LastName</h2>
+
+    <form method="post">
+        <input asp-for="UpdatePerson.Id" value="@Model.FullPerson.Id" type="hidden"/>
+        <div class="form-group">
+            <label asp-for="UpdatePerson.FirstName"></label>
+            <input asp-for="UpdatePerson.FirstName"/>
+            <span asp-validation-for="UpdatePerson.FirstName"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-danger"/>
+        </div>
+    </form>
+}

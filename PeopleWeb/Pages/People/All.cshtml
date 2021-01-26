@@ -1,0 +1,46 @@
+﻿@page
+@model PeopleWeb.Pages.People.AllModel
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1>People list</h1>
+
+@if (Model.People is null)
+{
+    <h2>Loading data...</h2>
+}
+else
+{
+    <div class="align-content-end">
+        <a asp-page="./Create" class="btn btn-info">Add new person</a>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>DateOfBirth</th>
+            <th>IsActive</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var person in Model.People)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.DateOfBirth</td>
+                <td>@person.IsActive</td>
+                <td><a asp-page="./Update" asp-route-id="@person.Id" class="btn btn-info">Update</a></td>
+                <td><a asp-page="./Delete" asp-route-id="@person.Id" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
