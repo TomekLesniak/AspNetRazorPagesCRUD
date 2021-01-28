@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLibrary", "DataLibrary\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleWeb", "PeopleWeb\PeopleWeb.csproj", "{B22FBEE0-1921-486C-BDEB-AD43F61312B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleWebMVC", "PeopleWebMVC\PeopleWebMVC.csproj", "{FBDD1600-E451-4AE1-B596-CBD456622484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleWebMVC", "PeopleWebMVC\PeopleWebMVC.csproj", "{FBDD1600-E451-4AE1-B596-CBD456622484}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleWebAPI", "PeopleWebAPI\PeopleWebAPI.csproj", "{298B1703-1497-4BC9-8403-9A589A618D4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleBlazorServer", "PeopleBlazorServer\PeopleBlazorServer.csproj", "{8B4D3634-8A8F-426E-969E-25FF3FD3253F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{FBDD1600-E451-4AE1-B596-CBD456622484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBDD1600-E451-4AE1-B596-CBD456622484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBDD1600-E451-4AE1-B596-CBD456622484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298B1703-1497-4BC9-8403-9A589A618D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298B1703-1497-4BC9-8403-9A589A618D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298B1703-1497-4BC9-8403-9A589A618D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298B1703-1497-4BC9-8403-9A589A618D4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B4D3634-8A8F-426E-969E-25FF3FD3253F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B4D3634-8A8F-426E-969E-25FF3FD3253F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B4D3634-8A8F-426E-969E-25FF3FD3253F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4D3634-8A8F-426E-969E-25FF3FD3253F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

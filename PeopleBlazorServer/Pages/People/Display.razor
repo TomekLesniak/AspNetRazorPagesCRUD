@@ -1,0 +1,101 @@
+﻿@page "/People/Display"
+@inject IPeopleData data
+@using Models
+
+<h3>Display</h3>
+
+@if (people is null)
+{
+    <h4>Loading...</h4>
+}
+else
+{
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>IsActive</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var person in people)
+        {
+            <tr>
+                @if (isUpdating && person.Id == updatePerson.Id)
+                {
+                    <td>
+                        <EditForm id="@updateFormId" Model="updatePerson" OnValidSubmit="HandleValidUpdate">
+                            <InputText @bind-Value="updatePerson.FirstName">@person.FirstName</InputText>
+                        </EditForm>
+                    </td>
+                }
+                else
+                {
+                    <td>@person.FirstName</td>
+                }
+                <td>@person.LastName</td>
+                <td>@person.DateOfBirth</td>
+                <td>@person.IsActive</td>
+                <td>
+                    @if (isUpdating && person.Id == updatePerson.Id)
+                    {
+                        <button class="btn btn-outline-info" type="submit" form="@updateFormId" @onclick="() => person.FirstName = updatePerson.FirstName">Save</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-info" @onclick="() => StartUpdatingRecord(person)">Update</button>
+                    }
+                </td>
+                <td colspan="2">
+                    @if (confirmDelete && person.Id == updatePerson.Id)
+                    {
+                        <button class="btn btn-outline-danger" @onclick="async () =>  await DeleteRecord(person)">Confirm</button>
+                        <button class="btn btn-secondary" @onclick="() => confirmDelete = false">Cancel</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-danger" @onclick="() => { confirmDelete = true; updatePerson.Id = person.Id; }">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<PersonModel> people;
+    private UpdatePersonModel updatePerson = new UpdatePersonModel();
+    private string updateFormId = "updateFormId";
+    private bool isUpdating = false;
+    private bool confirmDelete = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await data.GetPeople();
+    }
+
+    private void StartUpdatingRecord(PersonModel person)
+    {
+        isUpdating = true;
+        updatePerson.Id = person.Id;
+        updatePerson.FirstName = person.FirstName;
+    }
+
+    private async Task DeleteRecord(PersonModel person)
+    {
+        await data.DeletePerson(person.Id);
+        people.Remove(person);
+    }
+
+    private async Task HandleValidUpdate()
+    {
+        await data.UpdatePerson(updatePerson.Id, updatePerson.FirstName);
+        isUpdating = false;
+    }
+
+}
